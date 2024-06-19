@@ -1,0 +1,72 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const summerWords = [
+        'beach', 'sunshine', 'vacation', 'swimming', 'barbecue', 'ice cream', 'sunscreen', 'picnic', 
+        'surfing', 'sandcastle', 'popsicle', 'fireworks', 'camping', 'hiking', 'sailing', 'pool', 
+        'tan', 'flip-flops', 'bikini', 'shorts', 'sunglasses', 'kayaking', 'snorkeling', 'sunset', 
+        'watermelon', 'bonfire', 'lifeguard', 'paradise', 'relaxation', 'fishing', 'tropical', 
+        'coconut', 'island', 'sunbathing', 'volleyball', 'breeze', 'seaside', 'ocean', 'waves',
+        'sand', 'heat', 'palm tree', 'sunburn', 'daisy dukes', 'beach ball', 'lemonade', 'hammock',
+        'beach towel', 'summer camp', 'straw hat', 'beach chair', 'paddleboard', 'jet ski', 'diving',
+        'margarita', 'beach party', 'ice tea', 'cruise', 'beach umbrella', 'flip', 'tanning lotion',
+        'seashell', 'boardwalk', 'beachcombing', 'kite', 'beach volleyball', 'sunhat', 'tide', 
+        'lifebuoy', 'shell', 'shoreline', 'paddleboat', 'water skiing', 'beach buggy', 'beach house', 
+        'picnic basket', 'sunflower', 'driftwood', 'coral', 'tide pool', 'clamshell', 'beachwear', 
+        'sun visor', 'sunblock', 'vacation rental', 'sunglass', 'beach music', 'seagull', 'shore', 
+        'beach cabin', 'lifeguard stand', 'poolside', 'hot dog', 'shark', 'whale watching', 'kayak',
+        'canoe', 'rafting', 'wildflowers', 'campfire', 'bug spray', 'mosquito', 'breeze', 'heatwave',
+        'beachcomber', 'bonfire', 'scuba diving', 'tiki torch', 'summer school', 'road trip', 
+        'convertible', 'sailboat', 'beach cruiser', 'bathing suit', 'backyard', 'rose garden', 
+        'garden hose', 'sprinkler', 'patio', 'backyard barbecue', 'patio furniture', 'birdbath', 
+        'hummingbird', 'swim trunks', 'dune buggy', 'fish fry', 'ice pop', 'cold drink', 'hibiscus', 
+        'loquat', 'oranges', 'grapefruit', 'peach', 'nectarine', 'plum', 'raspberry', 'strawberry',
+        'blackberry', 'blueberry', 'lawn chair', 'popsicle', 'cooler', 'beach sand', 'floaty', 
+        'mermaid', 'splash', 'pool party', 'bathing suit', 'beach cover-up', 'lighthouse', 'fins', 
+        'beach mat', 'sand dune', 'seashells', 'seaweed', 'beachcomber', 'aloe vera', 'bucket', 
+        'shovel', 'boogie board', 'campfire', 'cool breeze', 'heat stroke', 'mosquito bite', 
+        'sunburn', 'tan line', 'vacation', 'beach day', 'endless summer', 'ice-cold lemonade', 
+        'sundress', 'sandbar', 'suntan', 'sunglasses', 'sunset', 'sunrise', 'beach bonfire', 'summer night',
+        'starfish', 'beach read', 'night swim', 'evening stroll', 'sun deck', 'moonlit beach', 'tide',
+        'low tide', 'high tide', 'tide pool', 'riptide', 'beach access', 'coastline', 'dune grass', 
+        'marshmallow roast', 's’mores', 'campsite', 'campsite', 'tent', 'RV', 'sail', 'mast', 'dinghy',
+        'pontoon', 'life jacket', 'beach resort', 'beach wedding', 'beach vacation', 'sunbather', 
+        'coastal town', 'beach bum', 'scuba gear', 'snorkel', 'mask', 'flippers', 'beachfront', 
+        'resort', 'swimwear', 'beachcombing', 'beach gear', 'sun tan', 'outdoor shower', 'sandcastle', 
+        'palm frond', 'palm tree', 'seashore', 'whale', 'beachside', 'tropical drink', 'luau', 
+        'conch shell', 'coral reef', 'sea turtle', 'sea lion', 'dolphin', 'surfboard', 'surf wax', 
+        'boogie board', 'sand dollar', 'sand crab', 'hermit crab', 'crustacean', 'shellfish', 'beach cabin', 
+        'beach cottage', 'tiki bar', 'bikini bottom', 'swim trunks', 'board shorts', 'beachcomber', 
+        'swimsuit', 'sand bucket', 'beach shoes', 'beach bag', 'sunshade', 'beach blanket', 'seaside', 
+        'water park', 'theme park', 'roller coaster', 'carousel', 'ferris wheel', 'water slide', 
+        'lazy river', 'wave pool', 'pool float', 'inner tube', 'pool noodle', 'swim cap', 'goggles', 
+        'kickboard', 'snorkel', 'dive mask', 'wet suit', 'swim fins', 'pool toys', 'pool games', 
+        'water balloon', 'splash pad', 'sprinkler system', 'outdoor kitchen', 'grill', 'charcoal', 
+        'propane', 'fire pit', 'backyard pool', 'pool house', 'deck', 'patio umbrella', 'picnic table', 
+        'shade tree', 'garden party', 'flower bed', 'garden gnome', 'watering can', 'compost', 'mulch',
+        'garden gloves', 'flower pot', 'bird feeder', 'butterfly', 'ladybug', 'dragonfly', 'cricket',
+        'grasshopper', 'moth', 'firefly', 'beetle', 'flea market', 'farmer’s market', 'roadside stand',
+        'fresh produce', 'corn on the cob', 'watermelon slice', 'cantaloupe', 'honeydew', 'picnic spot',
+        'nature hike', 'scenic drive', 'beach cruiser bike', 'skateboard', 'rollerblades', 'scooter',
+        'kite flying', 'boating', 'canoeing', 'rafting', 'stand up paddleboarding', 'outdoor concert',
+        'music festival', 'fireworks display', 'amusement park', 'beach volleyball', 'frisbee', 
+        'kite surfing', 'wakeboarding', 'water polo', 'beach yoga', 'sun salutation', 'evening swim',
+        'moonlight stroll', 'night hike', 'campfire stories', 'stargazing', 'meteor shower', 'campout',
+        'outdoor movie', 'drive-in movie', 'car camping', 'RV trip', 'tent camping', 'wild camping',
+        'hammock camping', 'glamping', 'nature reserve', 'national park', 'state park', 'forest', 
+        'meadow', 'lake', 'river', 'stream', 'creek', 'pond', 'reservoir', 'waterfall', 'spring', 
+        'geyser', 'hot spring', 'mineral spring', 'beachcomber', 'shelling', 'beach clean-up', 'eco-tour',
+        'bird watching', 'whale watching', 'dolphin tour', 'kayak tour', 'snorkel tour', 'scuba tour',
+        'nature walk', 'hiking trail', 'biking trail', 'mountain biking', 'rock climbing', 'bouldering',
+        'zip lining', 'rope course', 'adventure park', 'water park', 'theme park', 'amusement park',
+        'carnival', 'fair', 'festival', 'outdoor market', 'street fair', 'block party', 'parade',
+        'street performance', 'busker', 'food truck', 'food festival', 
+    ];
+
+    const wordButton = document.getElementById('wordButton');
+    const randomWordDiv = document.getElementById('randomWord');
+
+    wordButton.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * summerWords.length);
+        const randomWord = summerWords[randomIndex];
+        randomWordDiv.textContent = randomWord;
+    });
+});

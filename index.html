@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Word Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        .container {
+            text-align: center;
+        }
+        #wordButton {
+            padding: 20px 30px;
+            font-size: 30px;
+            cursor: pointer;
+            border: solid black 3px;
+            color: black;
+            border-radius: 1px;
+            background-color: white;
+        }
+
+        button:hover  {
+            background-color: light-grey;
+        }
+
+        #randomWord {
+            margin: 70px;
+            font-size: 100px;
+            color: #black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="randomWord"></div>
+        <button id="wordButton">GENERATE WORD</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
